@@ -37,8 +37,8 @@ Overview here.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/Archivo.git
-cd Archivo
+git clone https://github.com/shaurya35/TriviaJs.git
+cd TriviaJs
 ```
 
 2. Install the dependencies:
@@ -59,7 +59,7 @@ Access the app in your web browser at `http://localhost:8080`.
 
 ## Contributors
 
-- Your Name ([LinkedIn](Your LinkedIn Profile Link))
+- Shaurya Jha ([Linkedin](https://www.linkedin.com/in/shaurya--jha/))
 
 ## Acknowledgments
 
