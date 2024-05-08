@@ -6,13 +6,28 @@ router.get('/', (req, res) => {
     // this gets executed when user visit http://localhost:8080/quiz
 });
 
-router.get('/101', (req, res) => {
-    res.send('this is user quiz 101 route');
+router.get('/easy', (req, res) => {
+    res.send('this is user quiz easy route');
     // this gets executed when user visit http://localhost:8080/quiz/101
 });
 
-router.get('/102', (req, res) => {
-    res.send('this is user quiz 102 route');
+router.get('/medium', (req, res) => {
+    res.send('this is user quiz medium route');
+    // this gets executed when user visit http://localhost:8080/quiz/102
+});
+
+router.get('/hard', (req, res) => {
+    res.send('this is user quiz hard route');
+    // this gets executed when user visit http://localhost:8080/quiz/102
+});
+
+router.get('/profile', (req, res) => {
+    res.send('this is user profile route');
+    // this gets executed when user visit http://localhost:8080/quiz/102
+});
+
+router.get('/feedback', (req, res) => {
+    res.send('this is user feedback route');
     // this gets executed when user visit http://localhost:8080/quiz/102
 });
 
