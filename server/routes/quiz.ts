@@ -1,18 +1,18 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send('this is user route');
+    res.send('this is quiz route');
     // this gets executed when user visit http://localhost:8080/quiz
 });
 
 router.get('/101', (req, res) => {
-    res.send('this is user 101 route');
+    res.send('this is user quiz 101 route');
     // this gets executed when user visit http://localhost:8080/quiz/101
 });
 
 router.get('/102', (req, res) => {
-    res.send('this is user 102 route');
+    res.send('this is user quiz 102 route');
     // this gets executed when user visit http://localhost:8080/quiz/102
 });
 
