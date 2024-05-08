@@ -1,21 +1,28 @@
 import express from "express";
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('<h1> hello world </h1>');
-});
+//dotenv
+require("dotenv").config();
 
 // Include route files
-const adminRoute = require('./routes/admin');
-const quizRoute = require('./routes/quiz');
+const adminRoute = require("./routes/admin");
+const quizRoute = require("./routes/quiz");
+
+//middleware
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
+//routes
+app.get("/", (req, res) => {
+  res.send("<h1> hello world </h1>");
+});
 
 // Use routes
-app.use('/admin', adminRoute);
-app.use('/quiz', quizRoute);
+app.use("/admin", adminRoute);
+app.use("/quiz", quizRoute);
 
-
-const port = process.env.PORT || 8080;
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log("Server is running on port", process.env.PORT);
 });

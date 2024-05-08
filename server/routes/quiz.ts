@@ -1,6 +1,7 @@
 import express from "express";
 const router = express.Router();
 
+
 router.get('/', (req, res) => {
     res.send('this is quiz route');
     // this gets executed when user visit http://localhost:8080/quiz
@@ -26,7 +27,7 @@ router.get('/profile', (req, res) => {
     // this gets executed when user visit http://localhost:8080/quiz/102
 });
 
-router.get('/feedback', (req, res) => {
+router.post('/feedback', (req, res) => {
     res.send('this is user feedback route');
     // this gets executed when user visit http://localhost:8080/quiz/102
 });
