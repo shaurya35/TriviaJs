@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 //routes
 app.get("/", (req, res) => {
-  res.send("<h1> HomePage comes here </h1>");
+  res.send("<h1> HomePage comes  </h1>");
 });
 
 // Use routes
