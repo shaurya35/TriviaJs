@@ -63,5 +63,13 @@ router.post('/questions/hard', (req, res) => {
     res.send('admin here- questions - postHard');
 });
 
+router.delete('/questions/hard/:id', (req, res) => {
+    res.send('admin here- questions - deleteHardById');
+});
+
+router.patch('/questions/hard/:id', (req, res) => {
+    res.send('admin here- questions - updateHardById');
+});
+
 // export the router module so that indexcan .js file can use it
 module.exports = router;
