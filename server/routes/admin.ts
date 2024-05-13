@@ -21,13 +21,25 @@ router.get('/questions', (req, res) => {
     res.send('admin here- questions ');
 });
 
+router.post('/questions', createQuestions);
+
+router.delete('/questions', (req, res) => {
+    res.send('admin here- questions - deleteQuestions');
+});
+
+router.patch('/questions', (req, res) => {
+    res.send('admin here- questions - updateQuestions');
+});
+
 
 //admin panel easy
 router.get('/questions/easy', (req, res) => {
     res.send('admin here- questions - getEasy');
 });
 
-router.post('/questions/easy', createQuestions);
+router.put('/questions/easy', (req, res) => {
+    res.send('admin here- questions - postEasy');
+});
 
 router.delete('/questions/easy/:id', (req, res) => {
     res.send('admin here- questions - deleteEasyById');
