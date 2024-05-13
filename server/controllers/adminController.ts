@@ -2,7 +2,22 @@ const Question = require("../models/questionsModel");
 
 //get all questions
 const getAllQuestions = async (req: any, res: any) => {
-  const question = await Question.find({});
+  const questions = await Question.find({}).sort({ createdAt: -1 });
+
+  res.status(200).json(questions);
+};
+
+//get question by id
+const getQuestionById = async (req: any, res: any) => {
+  const { id } = req.params;
+
+  const question = await Question.findById(id);
+
+  if (!question) {
+    return res.status(404).json({ error: "No Such Question" });
+  }
+
+  res.status(200).json(question);
 };
 
 //get easy questions
@@ -36,5 +51,10 @@ const createQuestions = async (req: any, res: any) => {
 //hard
 
 module.exports = {
+  getAllQuestions,
+  getQuestionById,
+  getEasyQuestions,
+  getMedQuestions,
+  getHardQuestions,
   createQuestions,
 };
