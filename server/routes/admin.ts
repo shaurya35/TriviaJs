@@ -4,6 +4,7 @@ const {
     createEasyQuestions
 } = require('../controllers/adminController')
 
+
 //admmin panel route
 router.get('/', (req, res) => {
     res.send('admin here');
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
 router.get('/all-profiles', (req, res) => {
     res.send('admin here- all profiles');
 });
+
 
 
 //admin profile see all questions
@@ -30,6 +32,7 @@ router.delete('/questions', (req, res) => {
 router.patch('/questions', (req, res) => {
     res.send('admin here- questions - updateQuestions');
 });
+
 
 
 //admin panel easy
@@ -67,6 +70,7 @@ router.patch('/questions/medium/:id', (req, res) => {
     res.send('admin here- questions - updateMedById');
 });
 
+
 //admin panel hard
 router.get('/questions/hard', (req, res) => {
     res.send('admin here- questions - getHard');
@@ -83,6 +87,7 @@ router.delete('/questions/hard/:id', (req, res) => {
 router.patch('/questions/hard/:id', (req, res) => {
     res.send('admin here- questions - updateHardById');
 });
+
 
 // export the router module so that indexcan .js file can use it
 module.exports = router;
