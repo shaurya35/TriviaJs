@@ -26,10 +26,10 @@ router.get('/questions/easy', (req, res) => {
 });
 
 router.post('/questions/easy', async (req, res) => {
-    const {content, code, option1, option2, option3, option4} = req.body
+    const {content, code, options} = req.body
 
     try{
-        const easy = await Easy.create({content, code, option1, option2, option3, option4})
+        const easy = await Easy.create({content, code, options})
         res.status(200).json(easy)
     }catch(error){
         res.status(400).json({ error: (error as Error).message });
