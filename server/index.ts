@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 app.use("/admin", adminRoute);
 app.use("/quiz", quizRoute);
 
-//connect db
+// connect db
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
@@ -36,5 +36,4 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
 
