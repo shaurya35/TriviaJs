@@ -1,6 +1,8 @@
 import express from "express";
 const router = express.Router();
-
+const {
+    createEasyQuestions
+} = require('../controllers/adminController')
 
 //admmin panel route
 router.get('/', (req, res) => {
@@ -25,7 +27,7 @@ router.get('/questions/easy', (req, res) => {
     res.send('admin here- questions - getEasy');
 });
 
-router.post('/questions/easy', createEasyQuestions);
+router.post('/questions/easy', createQuestions);
 
 router.delete('/questions/easy/:id', (req, res) => {
     res.send('admin here- questions - deleteEasyById');

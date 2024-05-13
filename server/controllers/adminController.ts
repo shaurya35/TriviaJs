@@ -1,12 +1,17 @@
-const Easy = require('../models/easyModel')
+const Question = require('../models/questionsModel')
 
-//easy
-const createEasyQuestions = async (req: any, res: any) => {
-    const {content, code, options} = req.body
+//get all questions
+const getAllQuestions = async (req: any, res: any) => {
+    const question = await Question.find({})
+}
+
+//create questions
+const createQuestions = async (req: any, res: any) => {
+    const {level, content, code, options} = req.body
 
     try{
-        const easy = await Easy.create({content, code, options})
-        res.status(200).json(easy)
+        const question = await Question.create({level, content, code, options})
+        res.status(200).json(question)
     }catch(error){
         res.status(400).json({ error: (error as Error).message });
     }
@@ -16,5 +21,5 @@ const createEasyQuestions = async (req: any, res: any) => {
 //hard
 
 module.exports = {
-    createEasyQuestions
+    createQuestions
 }

@@ -1,10 +1,13 @@
 import { Timestamp } from "mongodb"
 
 const mongoose = require('mongoose')
-
 const Schema = mongoose.Schema
 
-const easyQuestions = new Schema({
+const questionSchema = new Schema({
+    level: {
+        type: String,
+        required: true
+    },
     content: {
         type: String,
         required: true
@@ -20,4 +23,4 @@ const easyQuestions = new Schema({
 
 }, {timestamps: true})
 
-module.exports = mongoose.model('Easy', easyQuestions)
+module.exports = mongoose.model('Question', questionSchema)
