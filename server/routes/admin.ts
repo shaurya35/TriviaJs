@@ -46,6 +46,13 @@ router.post('/questions/medium', (req, res) => {
     res.send('admin here- questions - postMed');
 });
 
+router.delete('/questions/medium/:id', (req, res) => {
+    res.send('admin here- questions - deleteMedById');
+});
+
+router.patch('/questions/medium/:id', (req, res) => {
+    res.send('admin here- questions - updateMedById');
+});
 
 //admin panel hard
 router.get('/questions/hard', (req, res) => {
