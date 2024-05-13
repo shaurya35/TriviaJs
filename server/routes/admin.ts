@@ -29,8 +29,8 @@ router.post('/questions/easy', async (req, res) => {
     const {content, code, option1, option2, option3, option4} = req.body
 
     try{
-        const easy = await Easy.create()
-
+        const easy = await Easy.create({content, code, option1, option2, option3, option4})
+        res.status(200).json(easy)
     }catch(error){
 
     }
