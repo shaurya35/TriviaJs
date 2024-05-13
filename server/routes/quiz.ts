@@ -1,40 +1,39 @@
 import express from "express";
 const router = express.Router();
 
-
+//user-quiz route
 router.get('/', (req, res) => {
-    res.send('this is quiz route');
-  
+    res.send('user here- quiz ');
 });
 
-router.get('/:id', (req, res) => {
-    res.send('this is quiz route');
 
+//user-quiz easy
+router.get('/easy', (req, res) => {
+    res.send('user here- quiz - easy');
 });
 
-router.get('/:id/easy', (req, res) => {
-    res.send('this is user quiz easy route');
 
+//user-quiz easy
+router.get('/medium', (req, res) => {
+    res.send('user here- quiz - med');
 });
 
-router.get('/:id/medium', (req, res) => {
-    res.send('this is user quiz medium route');
 
+//user-quiz easy
+router.get('/hard', (req, res) => {
+    res.send('user here- quiz - hard');
 });
 
-router.get('/:id/hard', (req, res) => {
-    res.send('this is user quiz hard route');
-    // this gets executed when user visit http://localhost:8080/quiz/102
+
+//user-quiz easy
+router.get('/profile', (req, res) => {
+    res.send('user here- profile');
 });
 
-router.get('/:id/profile', (req, res) => {
-    res.send('this is user profile route');
-    // this gets executed when user visit http://localhost:8080/quiz/102
-});
 
-router.post('/:id/feedback', (req, res) => {
-    res.send('this is user feedback route');
-    // this gets executed when user visit http://localhost:8080/quiz/102
+//user-quiz easy
+router.post('/feedback', (req, res) => {
+    res.send('user here- feedback');
 });
 
 // export the router module so that indexcan .js file can use it
