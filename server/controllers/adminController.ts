@@ -1,4 +1,5 @@
 const Question = require("../models/questionsModel");
+const mongoose = require('mongoose')
 
 //get all questions
 const getAllQuestions = async (req: any, res: any) => {
@@ -10,6 +11,10 @@ const getAllQuestions = async (req: any, res: any) => {
 //get question by id
 const getQuestionById = async (req: any, res: any) => {
   const { id } = req.params;
+
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such valid id'})
+  }
 
   const question = await Question.findById(id);
 
