@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const questionSchema = new Schema({
     level: {
         type: String,
+        enum: ['easy', 'medium', 'hard'],
         required: true
     },
     content: {
