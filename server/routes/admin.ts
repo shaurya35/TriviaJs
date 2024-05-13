@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 const {
-    createEasyQuestions
+    createQuestions
 } = require('../controllers/adminController')
 
 
