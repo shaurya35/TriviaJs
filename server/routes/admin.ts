@@ -3,17 +3,36 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     res.send('this is admin route');
-    // this gets executed when user visit http://localhost:8080/admin
+//admin panel
 });
 
-router.get('/101', (req, res) => {
+router.get('/all-profiles', (req, res) => {
     res.send('this is admin 101 route');
-    // this gets executed when user visit http://localhost:8080/admin/101
+//see all profile registered
 });
 
-router.get('/102', (req, res) => {
+router.get('/questions', (req, res) => {
     res.send('this is admin 102 route');
-    // this gets executed when user visit http://localhost:8080/admin/102
+//see all the questions added 
+});
+
+router.get('/questions/easy', (req, res) => {
+    res.send('this is admin 102 route');
+//see all the questions added 
+});
+router.get('/questions/easy', (req, res) => {
+    res.send('this is admin 102 route');
+//see all the questions added 
+});
+
+router.get('/questions/medium', (req, res) => {
+    res.send('this is admin 102 route');
+//see all the questions added 
+});
+
+router.get('/questions/hard', (req, res) => {
+    res.send('this is admin 102 route');
+//see all the questions added 
 });
 
 // export the router module so that indexcan .js file can use it
