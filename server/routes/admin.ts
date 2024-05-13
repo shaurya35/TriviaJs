@@ -28,6 +28,14 @@ router.post('/questions/easy', (req, res) => {
     res.send('admin here- questions - postEasy');
 });
 
+router.delete('/questions/easy/:id', (req, res) => {
+    res.send('admin here- questions - deleteEasyById');
+});
+
+router.patch('/questions/easy/:id', (req, res) => {
+    res.send('admin here- questions - updateEasyById');
+});
+
 
 //admin panel med
 router.get('/questions/medium', (req, res) => {
