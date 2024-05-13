@@ -5,7 +5,8 @@
     "include": [
       "index.ts",
       "routes/**/*.ts",
-      "models/**/*.ts" // Add this line if it's missing
+      "models/**/*.ts",
+      "controllers/**/*.ts"
     ]
   }
   
