@@ -32,4 +32,4 @@ const easyQuestions = new Schema({
 
 }, {timestamps: true})
 
-module.exports = mongoose.model('easy', easyQuestions)
+module.exports = mongoose.model('Easy', easyQuestions)

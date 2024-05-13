@@ -1,5 +1,6 @@
 import express from "express";
 const router = express.Router();
+const Easy = require('../models/easyModel')
 
 //admmin panel route
 router.get('/', (req, res) => {
@@ -24,7 +25,15 @@ router.get('/questions/easy', (req, res) => {
     res.send('admin here- questions - getEasy');
 });
 
-router.post('/questions/easy', (req, res) => {
+router.post('/questions/easy', async (req, res) => {
+    const {content, code, option1, option2, option3, option4} = req.body
+
+    try{
+        const easy = await Easy.create()
+
+    }catch(error){
+
+    }
     res.send('admin here- questions - postEasy');
 });
 

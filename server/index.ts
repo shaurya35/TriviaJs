@@ -10,6 +10,8 @@ const adminRoute = require("./routes/admin");
 const quizRoute = require("./routes/quiz");
 
 //middleware
+app.use(express.json());
+
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
