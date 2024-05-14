@@ -4,7 +4,8 @@ const {
   getAllQuestions,
   getQuestionById,
   createQuestions,
-
+  deleteQuestion,
+  updateQuestion,
   getEasyQuestions,
 
   getMedQuestions,
@@ -29,13 +30,9 @@ router.get("/questions/:id", getQuestionById);
 
 router.post("/questions", createQuestions);
 
-router.delete("/questions/:id", (req, res) => {
-  res.send("admin here- questions - deleteQuestions");
-});
+router.delete("/questions/:id", deleteQuestion);
 
-router.patch("/questions/:id", (req, res) => {
-  res.send("admin here- questions - updateQuestions");
-});
+router.patch("/questions/:id", updateQuestion);
 
 //admin panel easy
 router.get("/questions/easy", getEasyQuestions);

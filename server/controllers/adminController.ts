@@ -92,8 +92,12 @@ module.exports = {
   getQuestionById,  
   createQuestions,
   deleteQuestion,
+  updateQuestion,
+
   getEasyQuestions,
+
   getMedQuestions,
+  
   getHardQuestions,
 
 };
