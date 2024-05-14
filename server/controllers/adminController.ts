@@ -1,61 +1,55 @@
 const Question = require("../models/questionsModel");
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 //get all questions
 const getAllQuestions = async (req: any, res: any) => {
   const questions = await Question.find({}).sort({ createdAt: -1 });
-
   res.status(200).json(questions);
 };
 
 //get question by id
 const getQuestionById = async (req: any, res: any) => {
   const { id } = req.params;
-
-  if(!mongoose.Types.ObjectId.isValid(id)){
-    return res.status(404).json({error: 'No such valid id'})
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such valid id" });
   }
   const question = await Question.findById(id);
   if (!question) {
     return res.status(404).json({ error: "No Such Question" });
   }
-
   res.status(200).json(question);
 };
 
 //delete question
-const deleteQuestion = async(req: any, res: any) => {
+const deleteQuestion = async (req: any, res: any) => {
   const { id } = req.params;
-  if(!mongoose.Types.ObjectId.isValid(id)){
-    return res.status(404).json({error: 'No such valid id'})
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such valid id" });
   }
-
-  const question = await Question.findOneAndDelete({_id: id})
-  
+  const question = await Question.findOneAndDelete({ _id: id });
   if (!question) {
     return res.status(404).json({ error: "No Such Question" });
   }
-
-  res.status(200).json(question)
-}
+  res.status(200).json(question);
+};
 
 //update question
-const updateQuestion = async(req: any, res: any) => {
+const updateQuestion = async (req: any, res: any) => {
   const { id } = req.params;
-  if(!mongoose.Types.ObjectId.isValid(id)){
-    return res.status(404).json({error: 'No such valid id'})
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such valid id" });
   }
-
-  const question = await Question.findOneAndUpdate({_id: id}, {
-    ...req.body
-  })
-  
+  const question = await Question.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
   if (!question) {
     return res.status(404).json({ error: "No Such Question" });
   }
-
-  res.status(200).json(question)
-}
+  res.status(200).json(question);
+};
 
 //get easy questions
 const getEasyQuestions = async (req: any, res: any) => {
@@ -89,15 +83,11 @@ const createQuestions = async (req: any, res: any) => {
 
 module.exports = {
   getAllQuestions,
-  getQuestionById,  
+  getQuestionById,
   createQuestions,
   deleteQuestion,
   updateQuestion,
-
   getEasyQuestions,
-
   getMedQuestions,
-  
   getHardQuestions,
-
 };
