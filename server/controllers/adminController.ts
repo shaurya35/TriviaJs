@@ -15,15 +15,47 @@ const getQuestionById = async (req: any, res: any) => {
   if(!mongoose.Types.ObjectId.isValid(id)){
     return res.status(404).json({error: 'No such valid id'})
   }
-
   const question = await Question.findById(id);
-
   if (!question) {
     return res.status(404).json({ error: "No Such Question" });
   }
 
   res.status(200).json(question);
 };
+
+//delete question
+const deleteQuestion = async(req: any, res: any) => {
+  const { id } = req.params;
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such valid id'})
+  }
+
+  const question = await Question.findOneAndDelete({_id: id})
+  
+  if (!question) {
+    return res.status(404).json({ error: "No Such Question" });
+  }
+
+  res.status(200).json(question)
+}
+
+//update question
+const updateQuestion = async(req: any, res: any) => {
+  const { id } = req.params;
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such valid id'})
+  }
+
+  const question = await Question.findOneAndUpdate({_id: id}, {
+    ...req.body
+  })
+  
+  if (!question) {
+    return res.status(404).json({ error: "No Such Question" });
+  }
+
+  res.status(200).json(question)
+}
 
 //get easy questions
 const getEasyQuestions = async (req: any, res: any) => {
@@ -57,9 +89,11 @@ const createQuestions = async (req: any, res: any) => {
 
 module.exports = {
   getAllQuestions,
-  getQuestionById,
+  getQuestionById,  
+  createQuestions,
+  deleteQuestion,
   getEasyQuestions,
   getMedQuestions,
   getHardQuestions,
-  createQuestions,
+
 };
