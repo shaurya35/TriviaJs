@@ -1,4 +1,4 @@
-import { Timestamp } from "mongodb"
+import { Timestamp } from "mongodb" 
 
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
