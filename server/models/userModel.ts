@@ -14,6 +14,7 @@ const questionSchema = new Schema({
         required: true,
         unique: true
     }
+    
 }, {timestamps: true})
 
 module.exports = mongoose.model('Question', questionSchema)
