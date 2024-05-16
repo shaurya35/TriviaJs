@@ -77,9 +77,12 @@ const createQuestions = async (req: any, res: any) => {
     res.status(400).json({ error: (error as Error).message });
   }
 };
+
 //med
 
+
 //hard
+
 
 module.exports = {
   getAllQuestions,
