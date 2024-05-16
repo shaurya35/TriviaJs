@@ -9,11 +9,13 @@ const questionSchema = new Schema({
         required: true,
         unique: true
     },
+    
     userName: {
         type: String,
         required: true,
         unique: true
     }
+
 }, {timestamps: true})
 
 module.exports = mongoose.model('Question', questionSchema)
