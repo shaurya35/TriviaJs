@@ -5,9 +5,11 @@ const mongoose = require("mongoose");
 //dotenv
 require("dotenv").config();
 
+
 // Include route files
 const adminRoute = require("./routes/admin");
 const quizRoute = require("./routes/quiz");
+
 
 //middleware
 app.use(express.json());
@@ -17,10 +19,12 @@ app.use((req, res, next) => {
   next();
 });
 
+
 //routes
 app.get("/", (req, res) => {
   res.send("<h1> HomePage </h1>");
 });
+
 
 // Use routes
 app.use("/admin", adminRoute);
