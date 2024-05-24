@@ -11,7 +11,8 @@
       "index.ts",
       "routes/**/*.ts",
       "models/**/*.ts",
-      "controllers/**/*.ts"
+      "controllers/**/*.ts",
+      "src/**/*"
     ]
   }
   

@@ -1,29 +1,27 @@
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [backend, setBackendData] = useState<string>('');
+
+  useEffect(() => {
+    fetch('http://localhost:8080/')
+      .then(response => response.json())
+      .then(data => {
+        setBackendData(JSON.stringify(data)); 
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
     <>
       <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <div className="pages">
-          <Routes>
-            <Route
-              path='/'
-              element={<Home/>}
-              />
-          </Routes>
-        </div>
-      
-      </BrowserRouter>
+        <p>{backend}</p>
       </div>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
