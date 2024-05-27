@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000/admin';
+const BASE_URL = 'http://localhost:8080/admin';
 
 export const getAllQuestions = async () => {
     const response = await fetch(`${BASE_URL}/questions`);

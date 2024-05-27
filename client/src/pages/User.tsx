@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Admin() {
+export default function User() {
   return (
     <div>
-      Admin panel here
+      user panel here
     </div>
   )
 }
