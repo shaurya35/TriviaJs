@@ -9,6 +9,7 @@ import Medium from './components/Questions/MediumQuestions';
 import Hard from './components/Questions/HardQuestions';
 import NotFound from './pages/NotFound';
 import Profiles from './components/Profiles';
+import User from './pages/User';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path='/admin/questions/medium' element={<Medium/>} />
             <Route path='/admin/questions/hard' element={<Hard/>} />
             {/* user routes */}
+            <Route path='/user' element={<User/>} />
 
             <Route path='*' element={<NotFound/>} />
           </Routes>
