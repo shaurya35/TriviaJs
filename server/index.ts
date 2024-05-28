@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 const mongoose = require("mongoose");
-// import cors from 'cors';
+const cors = require("cors");
 
 //dotenv
 require("dotenv").config();
@@ -21,6 +21,13 @@ app.use((req, res, next) => {
 });
 
 //cors
+app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:5173', 
+  optionsSuccessStatus: 200 
+};
+
+app.use(cors(corsOptions));
 // const corsOptions = {
 //   origin: 'http://localhost:5173',
 //   optionsSuccessStatus: 200 
@@ -31,8 +38,8 @@ app.use((req, res, next) => {
 
 //routes
 app.get("/", (req, res) => {
-  // res.json({ message: "Hello World" })
-  res.send("<h1> HomePage </h1>");
+  res.json({ message: "Hello World" })
+  // res.send("<h1> HomePage </h1>");
 });
 
 
