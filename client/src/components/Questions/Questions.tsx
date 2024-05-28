@@ -22,19 +22,9 @@ const Questions: React.FC = () => {
           throw new Error(`HTTP error! status: ${response.status} - ${text}`);
         }
 
-        const data = await response.json();
-        console.log("Fetched data:", data);
+        const data: Question[] = await response.json();
 
-        const filteredData: Question[] = data.map((question: any) => ({
-          _id: question._id,
-          level: question.level,
-          content: question.content,
-          code: question.code,
-          options: question.options,
-        }));
-
-        console.log("Filtered data:", filteredData);
-        setQuestions(filteredData);
+        setQuestions(data);
       } catch (error) {
         setError((error as Error).message);
         console.error("Fetch error:", error);
