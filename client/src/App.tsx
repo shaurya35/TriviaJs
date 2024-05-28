@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //pages and components
 import Home from './pages/Home';
 import Admin from './pages/Admin';
-import Questions from './components/Questions/Questions';
-import Easy from './components/Questions/EasyQuestions';
-import Medium from './components/Questions/MediumQuestions';
-import Hard from './components/Questions/HardQuestions';
+import Questions from './pages/Questions';
+import Easy from './pages/EasyQuestions';
+import Medium from './pages/MediumQuestions';
+import Hard from './pages/HardQuestions';
 import NotFound from './pages/NotFound';
-import Profiles from './components/Profiles';
+import Profiles from './pages/Profiles';
 import User from './pages/User';
 
 export default function App() {
@@ -36,4 +36,38 @@ export default function App() {
     </>
   )
 }
+
+
+
+
+
+// src/
+//   components/
+//     Navbar.tsx
+//     QuestionForm.tsx
+//     QuestionList.tsx
+//     ProfileList.tsx
+//   pages/
+//     AdminPanel.tsx
+//     Leaderboard.tsx
+//     Profiles.tsx
+//     Questions.tsx
+//     EasyQuestions.tsx
+//     MediumQuestions.tsx
+//     HardQuestions.tsx
+//   App.tsx
+//   index.tsx
+
+// Components
+// Navbar: For navigation links.
+// QuestionForm: For adding or editing questions (CRUD operations).
+// QuestionList: To display a list of questions.
+// ProfileList: To display user profiles.
+// Pages
+// AdminPanel: Main admin page with links to other admin functionalities.
+// Leaderboard: Displays leaderboard.
+// Profiles: Displays all user profiles.
+// Questions: Main questions page with links to easy, medium, and hard questions.
+// EasyQuestions, MediumQuestions, HardQuestions: Display respective difficulty level questions.
+
 
