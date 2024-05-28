@@ -7,6 +7,7 @@ import Questions from './components/Questions/Questions';
 import Easy from './components/Questions/EasyQuestions';
 import Medium from './components/Questions/MediumQuestions';
 import Hard from './components/Questions/HardQuestions';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
             <Route path='/admin/questions/easy' element={<Easy/>} />
             <Route path='/admin/questions/medium' element={<Medium/>} />
             <Route path='/admin/questions/hard' element={<Hard/>} />
+            {/* user routes */}
+
+            <Route path='*' element={<NotFound/>} />
           </Routes>
         </div>
       
