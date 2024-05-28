@@ -1,39 +1,11 @@
-// import { useEffect, useState } from 'react';
-
-// export default function Home() {
-
-//   const [questions, setQuestions] = useState(null);
-
-//   useEffect(() => {
-//     const fetchQuestions = async () => {  
-//       const response = await fetch('/admin/questions');
-//       const data = await response.json();
-//           console.log(data);
-
-//       if(response.ok) {
-//         setQuestions(data);
-//       } 
-//     }
-//     fetchQuestions();
-//   }, [])
-
-
-//   return (
-//     <div>
-//       <div className="home">
-//         {questions && (questions as any[]).map((question: any) => (
-//           <p key={question._id}>{question.title}</p>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface Question {
   _id: string;
+  level: string;
   content: string;
+  code: string;
+  options: string[];
 }
 
 const Home: React.FC = () => {
@@ -43,26 +15,29 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('http://localhost:8080/admin/questions');
-        
+        const response = await fetch("http://localhost:8080/admin/questions");
+
         if (!response.ok) {
           const text = await response.text();
           throw new Error(`HTTP error! status: ${response.status} - ${text}`);
         }
 
         const data = await response.json();
-        console.log('Fetched data:', data); 
+        console.log("Fetched data:", data);
 
         const filteredData: Question[] = data.map((question: any) => ({
           _id: question._id,
+          level: question.level,
           content: question.content,
+          code: question.code,
+          options: question.options,
         }));
 
-        console.log('Filtered data:', filteredData); // Log filtered data
+        console.log("Filtered data:", filteredData);
         setQuestions(filteredData);
       } catch (error) {
         setError((error as Error).message);
-        console.error('Fetch error:', error);
+        console.error("Fetch error:", error);
       }
     };
 
@@ -73,18 +48,19 @@ const Home: React.FC = () => {
     <div>
       <div className="home">
         {error && <p className="error">{error}</p>}
-        {questions && questions.map((question) => (
-          <div key={question._id}>
-            <p>ID: {question._id}</p>
-            <p>Code: {question.content}</p>
-          </div>
-        ))}
+        {questions &&
+          questions.map((question) => (
+            <div key={question._id}>
+              <p>Level: {question.level}</p>
+              <p>Content: {question.content}</p>
+              <p>Code: {question.code}</p>
+              <p>Options: {question.options.join(", ")}</p>
+              <br />
+            </div>
+          ))}
       </div>
     </div>
   );
 };
 
 export default Home;
-
-
-
