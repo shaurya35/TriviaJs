@@ -25,11 +25,11 @@ const MediumQuestions: React.FC = () => {
         const data: Question[] = await response.json();
 
         // Filter questions to only include those with level "easy"
-        const easyQuestions = data.filter(
-          (question) => question.level === "easy"
+        const mediumQuestions = data.filter(
+          (question) => question.level === "medium"
         );
 
-        setQuestions(easyQuestions);
+        setQuestions(mediumQuestions);
       } catch (error) {
         setError((error as Error).message);
         console.error("Fetch error:", error);
