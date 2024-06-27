@@ -66,5 +66,7 @@ mongoose
   .catch((error: any) => {
     console.log(error);
   });
+
+  //new device 
   
 
